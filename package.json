@@ -1,17 +1,51 @@
 {
   "name": "jailer",
-  "description": "Simple key checking methodology.",
+  "description": "Simple key Checking Methodology.",
   "version": "0.1.0",
   "author": {
-    "name": "Bifuer",
+    "name": "Javier Gallego Martín",
     "email": "bifuer@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Chelo Quilón Gomez",
+      "email": "cheloq@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/bifuer/jailer",
   "repository": {
     "type": "git",
     "url": "git://github.com/bifuer/jailer"
   },
-  "main": "./jailer.js",
-  "scripts": {},
-  "dependencies": {},
-  "readmeFilename": "readme.md"
+  "bugs": {
+    "url": "https://github.com/bifuer/jailer/issues",
+    "email" : "cheloq@gmail.com"
+  },
+  "keywords": [
+    "date",
+    "time",
+    "format",
+    "parse",
+    "beautify",
+    "pattern"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "unit.js": "*"
+  },
+  "main": "./index.js",
+  "scripts":{
+    "test": "mocha test/"
+  },
+  "preferGlobal": false,
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
+  "readmeFilename": "README.md",
+  "license": "MIT"
 }
+
