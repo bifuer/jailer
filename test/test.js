@@ -3,9 +3,9 @@ var test = require('unit.js');
 var Jailer = require("../index.js");
 
 
-describe("Clase Jailer - ",function(){ 
+describe("Clase Jailer ",function(){ 
   describe("Creation",function(){ 
-    it("-- Creation with normal params--",function(){     
+    it("Creation with normal params",function(){     
 
       var jailer = new Jailer({
         remove: ['admin'],
@@ -28,9 +28,29 @@ describe("Clase Jailer - ",function(){
         
      })
 
+   it("Creation with no normal params",function(){     
 
-     it("-- Checking with normal params - FAILS --",function(){ 
+      var jailer = new Jailer({
+        remove: ['/////'],
+        edit: ['+++**/&%','kd34=00as','¿?$·6"(ªº'],
+        view: ['¡¡¡09=)"/·%·/$','203485029834()/&)(·/&$%509823409582309485','234987529834','¡¡¡09=)"/·%·/$ privileged']
+      });
 
+      test
+        .value(jailer)
+          .isType('object')
+        .value(jailer.remove)
+          .is( ['/////'])
+        .value(jailer.edit)
+          .is(['+++**/&%','kd34=00as','¿?$·6"(ªº'])
+        .value(jailer.view)
+          .is(['¡¡¡09=)"/·%·/$','203485029834()/&)(·/&$%509823409582309485','234987529834','¡¡¡09=)"/·%·/$ privileged'])
+    })
+  })
+
+
+  describe("Checking",function(){ 
+     it("Checking with normal values",function(){ 
       var jailer = new Jailer({
           remove: ['admin'],
           edit: ['editor owner','admin','publisher'],
@@ -54,8 +74,7 @@ describe("Clase Jailer - ",function(){
           .is(true)
     })
 
-      it("-- Checking with normal params --",function(){ 
-
+    it("Checking with normal params",function(){ 
       var jailer = new Jailer({
           remove: ['admin'],
           edit: ['editor owner','admin','publisher'],
@@ -80,29 +99,7 @@ describe("Clase Jailer - ",function(){
         .value(jailer.check('edit',['meInventoElPermiso']))
           .is(false)
         .value(jailer.check('edit',['editor']))
-          .is(false)
-       
-    })
-
-
-
-    it("-- Creation with no normal params--",function(){     
-
-      var jailer = new Jailer({
-        remove: ['/////'],
-        edit: ['+++**/&%','kd34=00as','¿?$·6"(ªº'],
-        view: ['¡¡¡09=)"/·%·/$','203485029834()/&)(·/&$%509823409582309485','234987529834','¡¡¡09=)"/·%·/$ privileged']
-      });
-
-      test
-        .value(jailer)
-          .isType('object')
-        .value(jailer.remove)
-          .is( ['/////'])
-        .value(jailer.edit)
-          .is(['+++**/&%','kd34=00as','¿?$·6"(ªº'])
-        .value(jailer.view)
-          .is(['¡¡¡09=)"/·%·/$','203485029834()/&)(·/&$%509823409582309485','234987529834','¡¡¡09=)"/·%·/$ privileged'])
+          .is(false)    
     })
   })
 });
