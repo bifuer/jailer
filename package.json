@@ -12,13 +12,13 @@
       "email": "cheloq@gmail.com"
     }
   ],
-  "homepage": "https://github.com/bifuer/jailer",
+  "homepage": "https://github.com/pillarsjs/jailer",
   "repository": {
     "type": "git",
-    "url": "git://github.com/bifuer/jailer"
+    "url": "git://github.com/pillarsjs/jailer"
   },
   "bugs": {
-    "url": "https://github.com/bifuer/jailer/issues",
+    "url": "https://github.com/pillarsjs/jailer/issues",
     "email" : "cheloq@gmail.com"
   },
   "keywords": [
